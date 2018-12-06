@@ -3,7 +3,8 @@ input = IO.gets "Write a number "
 width = IO.gets "Whats the width: "
 height = IO.gets "Whats the height: "
 
-tallArray = String.graphemes(String.trim(input))
+tallArray = String.trim(input) 
+         |> String.graphemes()
 
 dictionary = %{
     "1" => ['   ', ' | ', ' | '],
