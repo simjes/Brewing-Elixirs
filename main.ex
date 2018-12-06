@@ -1,8 +1,9 @@
 IO.puts "Hello world from Elixir"
-input = IO.gets ~S"Write a number "
+input = IO.gets "Write a number "
+width = IO.gets "Whats the width: "
+height = IO.gets "Whats the height: "
 
-noe = String.graphemes(String.trim(input))
-
+tallArray = String.graphemes(String.trim(input))
 
 dictionary = %{
     "1" => ['   ', ' | ', ' | '],
@@ -18,8 +19,30 @@ dictionary = %{
 }
 
 Enum.each([0, 1, 2], fn line ->    
-    Enum.each(noe, fn tall -> 
+    # if line == 0
+    #   print mellomrom * width og underscore * width
+    # if line == 1
+    #       each height
+    #               print mellomrom * width og pipe * 1 
+    #       end
+    #       print pipe og  underscore * width og mellomrom * width
+    Enum.each(tallArray, fn tall -> 
         IO.write Enum.at(dictionary[tall], line)
     end)
     IO.puts ''
 end) 
+
+
+# *_*
+# *_|
+# |_* 
+
+# *__*
+# *__|
+# |__*
+
+# *_*
+#   |
+# *_|
+# |
+# |_*
